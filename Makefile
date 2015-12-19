@@ -117,7 +117,6 @@ install:
 	@echo "Installation of ${MODULENAME} finished."
 
 develop:
-	${PYTHON_EXEC} setup.py develop
 	@echo
 	@echo "Installation for developpers of ${MODULENAME} finished."
 
