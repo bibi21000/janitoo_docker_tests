@@ -6,7 +6,9 @@ RUN cat /etc/issue
 RUN env
 RUN /sbin/ip addr
 
-COPY .coveralls.yml /opt/janitoo/src
+RUN ls -lisa
+
+COPY .coveralls.yml /opt/janitoo/src/
 
 WORKDIR /opt/janitoo/src
 
