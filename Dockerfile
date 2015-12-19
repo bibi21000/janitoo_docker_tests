@@ -6,6 +6,8 @@ RUN cat /etc/issue
 RUN env
 RUN /sbin/ip addr
 
+COPY .coveralls.yml /opt/janitoo/src
+
 WORKDIR /opt/janitoo/src
 
 RUN make -C janitoo travis-deps
