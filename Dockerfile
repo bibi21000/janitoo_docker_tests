@@ -18,9 +18,9 @@ RUN /usr/bin/supervisord && make tests-all
 
 RUN ls -lisa
 
-RUN make coverage-all
-RUN cd .coverage && coverage report
-#RUN make coverage-collect
+#RUN make coverage-all
+#RUN cd .coverage && coverage report
+RUN make coverage-collect
 
 RUN cp .coverage/.coverage janitoo_docker_tests/ && \
     cd janitoo_docker_tests && \
