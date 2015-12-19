@@ -18,7 +18,12 @@ RUN make coverage-all
 RUN cd .coverage && coverage report
 #RUN make coverage-collect
 
-RUN export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && \
-    cd .coverage && \
+RUN make clone module=janitoo_docker_tests && \
+    apt-get clean && \
+    [ -d /root/.cache ] && rm -Rf /root/.cache/*
+
+RUN cp .coverage/.coverage janitoo_docker_tests/ && \
+    cd janitoo_docker_tests && \
+    export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && \
     coveralls
 
