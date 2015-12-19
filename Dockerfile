@@ -8,4 +8,8 @@ RUN /sbin/ip addr
 
 WORKDIR /opt/janitoo/src
 
+RUN make -C janitoo travis-deps
+
 RUN /usr/bin/supervisord && make tests-all
+
+RUN make coverage-all && coveralls
