@@ -18,5 +18,5 @@ RUN make coverage-all
 RUN cd .coverage && coverage report
 #RUN make coverage-collect
 
-RUN COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ coveralls || exit 0
+RUN cd .coverage && COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ coveralls
 
