@@ -6,9 +6,7 @@ RUN cat /etc/issue
 RUN env
 RUN /sbin/ip addr
 
-RUN ls -lisa
-
-COPY .coveralls.yml /opt/janitoo/src/
+COPY .coveralls.yml /opt/janitoo/src/.coveralls.yml
 
 WORKDIR /opt/janitoo/src
 
@@ -16,4 +14,9 @@ RUN make -C janitoo travis-deps
 
 RUN /usr/bin/supervisord && make tests-all
 
-RUN make coverage-all && coveralls
+RUN ls -lisa
+
+RUN make coverage-all
+
+RUN coveralls || exit 0
+
