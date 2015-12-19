@@ -18,5 +18,5 @@ RUN ls -lisa
 
 RUN make coverage-all
 
-RUN coveralls || exit 0
+RUN COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ coveralls || exit 0
 
