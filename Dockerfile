@@ -14,7 +14,7 @@ RUN make clone module=janitoo_docker_tests && \
 
 RUN make -C janitoo travis-deps
 
-RUN /usr/bin/supervisord -c /etc/supervisord/supervisord.conf && make tests-all
+RUN /usr/bin/supervisord -c /etc/supervisord/supervisord-tests.conf && make tests-all
 
 RUN ls -lisa
 
