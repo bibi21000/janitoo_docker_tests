@@ -13,12 +13,6 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     rm -Rf /root/.cache/* 2>/dev/null|| true && \
     rm -Rf /tmp/* 2>/dev/null|| true
 
-RUN make clone module=janitoo_docker_tests && \
-    apt-get clean && \
-    [ -d /root/.cache ] && rm -Rf /root/.cache/*
-
-RUN make -C janitoo travis-deps
-
 RUN /usr/bin/supervisord -c /etc/supervisord/supervisord-tests.conf && make tests-all
 
 RUN ls -lisa
