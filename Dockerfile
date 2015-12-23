@@ -8,6 +8,11 @@ RUN /sbin/ip addr
 
 WORKDIR /opt/janitoo/src
 
+RUN apt-get update && apt-get dist-upgrade -y && \
+    apt-get clean && \
+    rm -Rf /root/.cache/* 2>/dev/null|| true && \
+    rm -Rf /tmp/* 2>/dev/null|| true
+
 RUN make clone module=janitoo_docker_tests && \
     apt-get clean && \
     [ -d /root/.cache ] && rm -Rf /root/.cache/*
