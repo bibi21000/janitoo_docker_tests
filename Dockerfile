@@ -13,6 +13,7 @@ ADD . /opt/janitoo/src/janitoo_docker_tests
 WORKDIR /opt/janitoo/src
 
 RUN apt-get update && apt-get dist-upgrade -y && \
+    pip install coveralls && \
     apt-get clean && \
     rm -Rf /root/.cache/* 2>/dev/null|| true && \
     rm -Rf /tmp/* 2>/dev/null|| true
