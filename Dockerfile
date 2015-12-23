@@ -6,6 +6,10 @@ RUN cat /etc/issue
 RUN env
 RUN /sbin/ip addr
 
+RUN mkdir /opt/janitoo/src/janitoo_docker_tests
+
+ADD . /opt/janitoo/src/janitoo_docker_tests
+
 WORKDIR /opt/janitoo/src
 
 RUN apt-get update && apt-get dist-upgrade -y && \
