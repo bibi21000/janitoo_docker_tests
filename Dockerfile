@@ -18,7 +18,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     rm -Rf /root/.cache/* 2>/dev/null|| true && \
     rm -Rf /tmp/* 2>/dev/null|| true
 
-RUN /usr/bin/supervisord -c /etc/supervisord/supervisord-tests.conf && make tests-all
+RUN /usr/bin/supervisord -c /etc/supervisor/janitoo-tests.conf && make tests-all
 
 RUN ls -lisa
 
