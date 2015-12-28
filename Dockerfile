@@ -33,6 +33,6 @@ RUN make coverage-check
 
 VOLUME ["/etc/nginx/conf.d/", "/var/log", "/etc/mosquitto/", "/var/lib/mosquitto", "/etc/supervisord", "/opt/janitoo/home", "/opt/janitoo/log", "/opt/janitoo/etc"]
 
-EXPOSE 22 1883 5005 8085 9001
+EXPOSE 22 1883 5005 8080 8085 9001
 
 CMD ["/root/auto.sh"]
