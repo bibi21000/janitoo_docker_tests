@@ -31,6 +31,12 @@ RUN cp .coverage/.coverage janitoo_docker_tests/ && \
 
 RUN make coverage-check
 
+RUN make uninstall-all
+
+RUN make uninstall-all
+
+RUN make install-all
+
 VOLUME ["/etc/nginx/conf.d/", "/var/log", "/etc/mosquitto/", "/var/lib/mosquitto", "/etc/supervisord", "/opt/janitoo/home", "/opt/janitoo/log", "/opt/janitoo/etc"]
 
 EXPOSE 22 1883 5005 8080 8085 9001
