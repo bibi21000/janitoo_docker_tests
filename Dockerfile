@@ -31,11 +31,9 @@ RUN cp .coverage/.coverage janitoo_docker_tests/ && \
 
 RUN make coverage-check
 
-RUN make uninstall-all
-
-RUN make uninstall-all
-
-RUN make install-all
+RUN make uninstall-all && \
+    make uninstall-all && \
+    make install-all
 
 VOLUME ["/etc/nginx/conf.d/", "/var/log", "/etc/mosquitto/", "/var/lib/mosquitto", "/etc/supervisord", "/opt/janitoo/home", "/opt/janitoo/log", "/opt/janitoo/etc"]
 
