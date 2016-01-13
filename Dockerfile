@@ -22,6 +22,11 @@ RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
     make tests-all
 
+RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
+    sleep 15 && \
+    cd janitoo_manager && \
+    make docker-test
+
 RUN ls -lisa
 
 RUN make coverage-all
