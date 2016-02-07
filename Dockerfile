@@ -20,9 +20,7 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 
 RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
-    export DOCKER_TESTS=1 && \
-    make tests-all && \
-    unset DOCKER_TESTS
+    make tests-all
 
 RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
