@@ -6,9 +6,11 @@ RUN cat /etc/issue
 RUN env
 RUN /sbin/ip addr
 
-RUN mkdir /opt/janitoo/src/janitoo_docker_tests
+RUN mkdir /opt/janitoo/src/janitoo_docker_tests/
 
 ADD . /opt/janitoo/src/janitoo_docker_tests
+
+RUN date +'%Y/%m/%d %H:%M:%S'
 
 WORKDIR /opt/janitoo/src
 
@@ -27,6 +29,8 @@ RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     cd janitoo_manager && \
     make docker-test
 
+RUN date +'%Y/%m/%d %H:%M:%S'
+RUN df -h
 RUN ls -lisa
 
 RUN make coverage-all
