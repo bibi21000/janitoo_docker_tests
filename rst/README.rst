@@ -11,15 +11,9 @@
     :alt: Docker size
 
 
-===============
-The README file
-===============
+====================
+Janitoo docker image
+====================
 
-This file will be published on your github account
-
-
-A section
-=========
-A text in this section.
-
+The most stable docker image of Janitoo.
 
