@@ -17,8 +17,8 @@ WORKDIR /opt/janitoo/src
 RUN apt-get update && apt-get dist-upgrade -y && \
     pip install coveralls && \
     apt-get clean && \
-    rm -Rf /root/.cache/* 2>/dev/null|| true && \
-    rm -Rf /tmp/* 2>/dev/null|| true
+    rm -Rf /root/.cache/* 2>/dev/null||true && \
+    rm -Rf /tmp/* 2>/dev/null||true
 
 RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
