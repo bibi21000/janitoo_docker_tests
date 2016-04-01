@@ -14,6 +14,14 @@ RUN date +'%Y/%m/%d %H:%M:%S'
 
 WORKDIR /opt/janitoo/src
 
+#Only for tests
+RUN make clone module=janitoo_postgresql && \
+    make clone module=janitoo_postgresql_client && \
+    make docker-inst module=janitoo_postgresql && \
+    apt-get clean && \
+    rm -Rf /root/.cache/* 2>/dev/null||true && \
+    rm -Rf /tmp/* 2>/dev/null||true
+
 RUN apt-get update && apt-get dist-upgrade -y && \
     pip install coveralls && \
     apt-get clean && \
