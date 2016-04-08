@@ -29,10 +29,7 @@ RUN make clone module=janitoo_db_full && \
 
 RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
-    make tests-all
-
-RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
-    sleep 15 && \
+    make docker-tests && \
     cd janitoo_manager && \
     make docker-test
 
