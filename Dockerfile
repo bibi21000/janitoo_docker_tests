@@ -17,7 +17,7 @@ WORKDIR /opt/janitoo/src
 #Only for tests
 RUN make clone module=janitoo_postgresql && \
     make clone module=janitoo_postgresql_client && \
-    make docker-inst module=janitoo_postgresql && \
+    make -C janitoo_postgresql docker-inst && \
     apt-get clean && \
     rm -Rf /root/.cache/* 2>/dev/null||true && \
     rm -Rf /tmp/* 2>/dev/null||true
