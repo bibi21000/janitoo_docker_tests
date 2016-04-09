@@ -44,14 +44,12 @@ RUN date +'%Y/%m/%d %H:%M:%S'
 RUN df -h
 RUN ls -lisa
 
-RUN make coverage-all
+RUN make docker-coverage
 
 RUN cp .coverage/.coverage janitoo_docker_tests/ && \
     cd janitoo_docker_tests && \
     export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && \
     coveralls
-
-RUN make coverage-check
 
 #RUN make uninstall-all && \
 #    make uninstall-all && \
