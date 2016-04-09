@@ -31,9 +31,6 @@ RUN make pull repo="https://github.com/bibi21000/janitoo_raspberry_i2c_full.git"
     apt-get clean && rm -Rf /tmp/*||true && \
     [ -d /root/.cache ] && rm -Rf /root/.cache/*
 
-RUN pwd && \
-    cat Makefile
-
 RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
     sleep 15 && \
     make docker-tests && \
