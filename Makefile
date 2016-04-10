@@ -138,6 +138,9 @@ docker-tests:
 	@echo
 	@echo "Docker tests for ${MODULENAME} finished."
 
+coveralls:
+    export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && coveralls
+
 tests:
 	-mkdir -p ${BUILDDIR}/docs/html/tools/coverage
 	-mkdir -p ${BUILDDIR}/docs/html/tools/nosetests

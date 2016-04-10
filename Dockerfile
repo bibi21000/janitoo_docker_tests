@@ -44,9 +44,7 @@ RUN ls -lisa
 RUN make docker-coverage
 
 RUN cp .coverage/.coverage janitoo_docker_tests/ && \
-    cd janitoo_docker_tests && \
-    export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && \
-    coveralls
+    make -C janitoo_docker_tests coveralls
 
 #RUN make uninstall-all && \
 #    make uninstall-all && \
