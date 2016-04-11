@@ -39,9 +39,12 @@ RUN /usr/bin/supervisord -c /etc/supervisor/supervisord-tests.conf && \
 
 RUN date +'%Y/%m/%d %H:%M:%S'
 RUN df -h
-RUN ls -lisa
 
 RUN make docker-coverage
+
+RUN ls -lisa
+
+RUN ls -lisa .xunit/
 
 RUN cp .coverage/.coverage janitoo_docker_tests/ && \
     make -C janitoo_docker_tests coveralls
