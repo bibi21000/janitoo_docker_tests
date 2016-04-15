@@ -45,8 +45,6 @@ BOWERDEPS := $(shell [ -f bower.deps ] && cat bower.deps)
 
 TAGGED := $(shell git tag | grep -c v${janitoo_version} )
 
-COVERALLS_REPO_TOKEN := 3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ
-
 -include Makefile.local
 
 NOSECOVER     = --cover-package=${NOSEMODULES},${MODULENAME} --with-coverage --cover-inclusive --cover-html --cover-html-dir=${BUILDDIR}/docs/html/tools/coverage --with-html --html-file=${BUILDDIR}/docs/html/tools/nosetests/index.html
@@ -141,7 +139,7 @@ docker-tests:
 	@echo "Docker tests for ${MODULENAME} finished."
 
 coveralls:
-	coveralls
+	export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && coveralls
 	@echo
 	@echo "Coverage published."
 
