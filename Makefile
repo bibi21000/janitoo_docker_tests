@@ -36,7 +36,7 @@ ifeq (${python_version_major},3)
 endif
 
 MODULENAME   = $(shell basename `pwd`)
-NOSEMODULES   = janitoo,janitoo_factory,janitoo_db
+NOSEMODULES  = janitoo,janitoo_factory,janitoo_db
 
 NOSECOVER     = --cover-package=janitoo,janitoo_db,${MODULENAME} --cover-min-percentage= --with-coverage --cover-inclusive --cover-html --cover-html-dir=${BUILDDIR}/docs/html/tools/coverage --with-html --html-file=${BUILDDIR}/docs/html/tools/nosetests/index.html
 
