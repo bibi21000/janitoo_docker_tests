@@ -37,8 +37,7 @@ endif
 
 MODULENAME   = $(shell basename `pwd`)
 NOSEMODULES  = janitoo,janitoo_factory,janitoo_db
-
-NOSECOVER     = --cover-package=janitoo,janitoo_db,${MODULENAME} --cover-min-percentage= --with-coverage --cover-inclusive --cover-html --cover-html-dir=${BUILDDIR}/docs/html/tools/coverage --with-html --html-file=${BUILDDIR}/docs/html/tools/nosetests/index.html
+MOREMODULES  = janitoo_factory_ext
 
 DEBIANDEPS := $(shell [ -f debian.deps ] && cat debian.deps)
 BOWERDEPS := $(shell [ -f bower.deps ] && cat bower.deps)
@@ -48,7 +47,7 @@ TAGGED := $(shell git tag | grep -c v${janitoo_version} )
 -include Makefile.local
 
 NOSECOVER     = --cover-package=${MODULENAME} --with-coverage --cover-inclusive --cover-html --cover-html-dir=${BUILDDIR}/docs/html/tools/coverage --with-html --html-file=${BUILDDIR}/docs/html/tools/nosetests/index.html
-NOSEDOCKER     = --cover-package=${NOSEMODULES},${MODULENAME} --with-coverage --cover-inclusive --with-xunit --xunit-testsuite-name=${MODULENAME}
+NOSEDOCKER     = --cover-package=${NOSEMODULES},${MODULENAME},${MOREMODULES} --with-coverage --cover-inclusive --with-xunit --xunit-testsuite-name=${MODULENAME}
 
 .PHONY: help check-tag clean all build develop install uninstall clean-doc doc certification tests deps docker-tests coveralls
 
@@ -124,6 +123,16 @@ develop:
 	@echo
 	@echo "Installation for developpers of ${MODULENAME} finished."
 
+docker-pull:
+	docker pull bibi21000/janitoo
+	@echo
+	@echo "Docker image pulled."
+
+docker-tests:
+	docker build -t 'bibi21000/janitoo_tests' .
+	@echo
+	@echo "Tests for docker finished."
+
 travis-deps: deps
 	sudo apt-get -y install libevent-2.0-5 mosquitto
 	pip install git+git://github.com/bibi21000/janitoo_nosetests@master
@@ -139,7 +148,7 @@ docker-tests:
 	@echo "Docker tests for ${MODULENAME} finished."
 
 coveralls:
-	export COVERALLS_REPO_TOKEN=3XGlPDJ1miuq8vVeZkjq1PSxyCUnHGBMZ && coveralls
+	export COVERALLS_REPO_TOKEN=${COVERALLS_REPO_TOKEN} && coveralls
 	@echo
 	@echo "Coverage published."
 
