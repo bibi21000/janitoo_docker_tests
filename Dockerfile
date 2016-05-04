@@ -23,8 +23,7 @@ RUN make clone module=janitoo_postgresql && \
     rm -Rf /tmp/* 2>/dev/null||true
 
 RUN make clone module=janitoo_db_full && \
-    apt-get clean && \
-    rm -Rf /root/.cache/* 2>/dev/null||true && \
+    apt-get clean && rm -Rf /root/.cache/* 2>/dev/null||true && \
     rm -Rf /tmp/* 2>/dev/null||true
 
 RUN make pull repo="https://github.com/bibi21000/janitoo_raspberry_i2c_full.git" && make module=janitoo_raspberry_i2c_full docker-deps && make module=janitoo_raspberry_i2c_full develop && \

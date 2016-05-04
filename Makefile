@@ -130,7 +130,7 @@ docker-pull:
 	@echo
 	@echo "Docker image pulled."
 
-docker-tests:
+docker-image-tests:
 	docker build -t 'bibi21000/janitoo_tests' .
 	@echo
 	@echo "Tests for docker finished."
