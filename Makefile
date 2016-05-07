@@ -140,7 +140,6 @@ directories:
 	-sudo chown -Rf ${USER}:${USER} /opt/janitoo
 	-for dir in cache cache/janitoo_manager home log run etc init; do mkdir /opt/janitoo/$$dir; done
 
-
 travis-deps: deps
 	sudo apt-get -y install libevent-2.0-5 mosquitto
 	pip install git+git://github.com/bibi21000/janitoo_nosetests@master
