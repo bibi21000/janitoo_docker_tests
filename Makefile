@@ -125,7 +125,7 @@ develop:
 	@echo
 	@echo "Installation for developpers of ${MODULENAME} finished."
 
-docker-pull:
+docker-image-pull:
 	docker pull bibi21000/janitoo
 	@echo
 	@echo "Docker image pulled."
