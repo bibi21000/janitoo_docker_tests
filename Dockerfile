@@ -22,6 +22,8 @@ RUN make clone module=janitoo_postgresql && \
     rm -Rf /root/.cache/* 2>/dev/null||true && \
     rm -Rf /tmp/* 2>/dev/null||true
 
+RUN ls -lisa /etc/supervisor/janitoo-tests.conf.d/
+
 RUN make clone module=janitoo_db_full && \
     apt-get clean && rm -Rf /root/.cache/* 2>/dev/null||true && \
     rm -Rf /tmp/* 2>/dev/null||true
