@@ -52,8 +52,8 @@ RUN cp .coverage/.coverage janitoo_docker_tests/ && \
 #    make uninstall-all && \
 #    make install-all
 
-VOLUME ["/root/.ssh/", "/etc/nginx/conf.d/", "/var/log", "/etc/mosquitto/", "/var/lib/mosquitto/", "/etc/supervisor/", "/opt/janitoo/home/", "/opt/janitoo/etc/", "/opt/janitoo/src/"]
+#VOLUME ["/root/.ssh/", "/etc/nginx/conf.d/", "/var/log", "/etc/mosquitto/", "/var/lib/mosquitto/", "/etc/supervisor/", "/opt/janitoo/home/", "/opt/janitoo/etc/", "/opt/janitoo/src/"]
 
-EXPOSE 22 1883 5005 8080 8085 8086 9001
+#EXPOSE 22 1883 5005 8080 8085 8086 9001
 
 CMD ["/root/auto.sh"]
