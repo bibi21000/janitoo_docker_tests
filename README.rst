@@ -20,13 +20,13 @@ To launch the tests :
 
 Retrieve the docker image from docker hub :
 
-..code: bash
+.. code:: bash
 
     make docker-image-pull
 
 And launch the tests
 
-..code: bash
+.. code:: bash
 
     make docker-image-tests
 
@@ -34,7 +34,7 @@ At last, be patient ...
 
 After some hours, you'll get something like :
 
-..code: bash
+.. code:: bash
 
     Name                                                                                              Stmts   Miss  Cover
     ---------------------------------------------------------------------------------------------------------------------
