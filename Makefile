@@ -89,6 +89,8 @@ endif
 clean-doc:
 	-rm -Rf ${BUILDDIR}/docs
 	-rm -Rf ${BUILDDIR}/janidoc
+	-rm -f generated_doc
+	-rm -f janidoc
 
 janidoc:
 	ln -s /opt/janitoo/src/janitoo_sphinx janidoc
