@@ -298,3 +298,6 @@ After some hours, you'll get something like :
 
     Coverage finished.
 
+Documentation
+=============
+You can browse online documentation here : https://bibi21000.github.io/janitoo_docker_tests/.
