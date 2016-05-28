@@ -304,3 +304,7 @@ After some hours, you'll get something like :
 Documentation
 =============
 You can browse online documentation here : https://bibi21000.github.io/janitoo_docker_tests/.
+
+Tutorial
+========
+You can find a tutorial here : https://bibi21000.github.io/janitoo_tutorial/.
