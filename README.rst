@@ -2,7 +2,7 @@
     :target: https://coveralls.io/github/bibi21000/janitoo_docker_tests?branch=master
     :alt: Coveralls results
 
-.. image:: https://img.shields.io/badge/Documenation-ok-brightgreen.svg?style=flat
+.. image:: https://img.shields.io/badge/Documentation-ok-brightgreen.svg?style=flat
    :target: https://bibi21000.github.io/janitoo_docker_tests/index.html
    :alt: Documentation
 
